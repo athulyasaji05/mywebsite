@@ -2,10 +2,15 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::post('registration', [CustomerController::class, 'add_customer']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
